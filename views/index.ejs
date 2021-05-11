@@ -1,0 +1,35 @@
+<%- include('partials/header.ejs')%>
+<%- include('partials/homenavbar.ejs')%>
+
+<style>
+
+</style>
+
+<body>
+    <div class="container">
+        <hr>
+        <div class="jumbotron">
+            <h1 class="display-4" style="text-align:center">Bem vindo!</h1><br>
+            <p class="lead">Este projeto é um blog criado para treinar e aprender mais sobre as tecnologias Node.JS, Javascript, Bootstrap, EJS, Sequelize entre outras</p>
+            <hr class="my-4">
+            <p>Este projeto foi desenvolvido baseado no sistema CRUD(Create Read Update Delete), usando a ferramente TinyMCE para criar uma area de edição de texto com varios atributos a disposição do usuario, permitindo adicionar links de video, imagem, links externos, formatação de texto completa, criação de areas para tabela, codigos de programação, emojis e afins. 😎</p>
+            <a class="btn btn-primary btn-lg" href="#" role="button">Leia mais</a>
+          </div>
+        <hr>
+
+
+        <% articles.forEach(article => { %>
+        <div class="card">
+            <div class="card-header" style="text-align: center;">
+                <h2><%=article.title%></h2>
+            </div>
+            <div class="card-body">
+                <a class="btn btn-success" href="/<%= article.slug %>">Ler Artigo</a>
+            </div>
+        </div><br>
+        
+        
+        <%})%>
+    </div>
+</body>
+<%- include('partials/footer.ejs')%>
